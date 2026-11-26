@@ -1,8 +1,8 @@
-:root{--bg:#f6f0ff;--ink:#ce9b4fd2;--utama:#5fd45bce;--kedua:#0b8a7a;--ketiga:#a5773b;--card:#fffdff;--line:#5fb6d1;
+:root{--bg:#f6f0ff;--ink:#2a1a4a;--utama:#7c3aed;--kedua:#0b8a7a;--ketiga:#ffc2d9;--card:#fffdff;--line:#2a1a4a;
 --disp:'Fredoka','Arial Rounded MT Bold','Trebuchet MS',sans-serif;--body:'Nunito','Segoe UI',Arial,sans-serif;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#86dbb8;--ink:#f6f0ff;--card:#cc9b3fc2;--line:#f6f0ff}}
-:root[data-theme="dark"]{--bg:#4fb9a8;--ink:#f6f0ff;--card:#289272;--line:#f6f0ff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1238;--ink:#f6f0ff;--card:#2a1a4a;--line:#f6f0ff}}
+:root[data-theme="dark"]{--bg:#1d1238;--ink:#f6f0ff;--card:#2a1a4a;--line:#f6f0ff}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;height:100%}
 body{font-family:var(--body);background:var(--bg);color:var(--ink);line-height:1.55;overflow-x:hidden}
