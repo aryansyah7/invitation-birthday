@@ -1,8 +1,8 @@
 // ===== UBAH DATA PESTA DI SINI =====
-const NOMOR_WA = "6281234567890";            // nomor tuan rumah, format 62 tanpa +
-const NAMA_ULTAH = "Nadia";
+const NOMOR_WA = "6289632188118";            // nomor tuan rumah, format 62 tanpa +
+const NAMA_ULTAH = "Arby";
 const TARGET = new Date("2026-12-19T19:00:00+07:00");
-const TEMPAT = "Kafe Pelangi, Jl. Melati No. 12, Jakarta";
+const TEMPAT = "Jl. Kebayoran Regensi No. 84";
 
 const $ = id => document.getElementById(id);
 // Personalisasi: ?to=Nama&ket=Teman%20Kuliah
@@ -17,7 +17,7 @@ function confetti() {
   if (matchMedia("(prefers-reduced-motion:reduce)").matches) return;
   const c = $("fx"), x = c.getContext("2d");
   c.width = innerWidth; c.height = innerHeight;
-  const cols = ["#7c3aed", "#0b8a7a", "#ffc2d9", "#ffd23c", "#ffffff"];
+  const cols = ["#75ddeb", "#0b8a7a", "#90f1a9", "#ffd23c", "#ffffff"];
   const ps = Array.from({ length: 140 }, () => ({
     x: c.width / 2, y: c.height * .6,
     vx: (Math.random() - .5) * 16, vy: -Math.random() * 18 - 4,
@@ -71,7 +71,10 @@ $("calBtn").onclick = () => {
 // ===== MUSIK: tombol melayang play/pause =====
 const bgm = $("bgm"), musicBtn = $("musicBtn");
 function setMusic(on) {
-  if (on) bgm.play().then(() => musicBtn.classList.add("on")).catch(() => musicBtn.classList.remove("on"));
+  if (on) bgm.play().then(() => musicBtn.classList.add("on")).catch(() => {
+    musicBtn.classList.remove("on");
+    toast("Musik tidak dapat diputar. Coba tekan tombol musik lagi.");
+  });
   else { bgm.pause(); musicBtn.classList.remove("on"); }
 }
 musicBtn.onclick = () => setMusic(bgm.paused);
@@ -106,12 +109,16 @@ function tampil() {
     li.textContent = "Belum ada ucapan. Jadilah yang pertama!";
     ul.append(li); return;
   }
-  data.forEach(x => {
-    const li = document.createElement("li"), b = document.createElement("b"), p = document.createElement("p");
-    b.textContent = x.nama + " (" + x.status + ")";
-    p.textContent = x.ucapan;
-    li.append(b, p); ul.append(li);
-  });
+  data.forEach((x, n) => {
+  const li = document.createElement("li"), b = document.createElement("b"), p = document.createElement("p");
+  const hapus = document.createElement("button");
+  b.textContent = x.nama + " (" + x.status + ")";
+  p.textContent = x.ucapan;
+  hapus.textContent = "Hapus";
+  hapus.className = "btn alt";
+  hapus.onclick = () => { data.splice(n, 1); simpan(data); tampil(); toast("Ucapan dihapus"); };
+  li.append(b, p, hapus); ul.append(li);
+});
 }
 $("rsvpForm").onsubmit = e => {
   e.preventDefault();
@@ -129,9 +136,14 @@ $("waBtn").onclick = () => {
 };
 tampil();
 
-// ===== INTERAKSI: ketuk angka 20 = konfeti lagi =====
+// ===== INTERAKSI: ketuk angka 17 = konfeti lagi =====
 $("angka").onclick = confetti;
-$("angka").onkeydown = e => { if (e.key === "Enter") confetti(); };
+$("angka").onkeydown = e => {
+  if (e.key === "Enter" || e.key === " ") {
+    e.preventDefault();
+    confetti();
+  }
+};
 
 // ===== INTERAKSI: ketuk foto = tampil besar (lightbox) =====
 const lb = $("lb"), lbImg = $("lbImg");
