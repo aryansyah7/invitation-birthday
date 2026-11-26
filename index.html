@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arbyan 17th Birthday Party</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="lock">
+
+<div id="cover">
+  <div class="kecil">Kamu diundang ke pesta ulang tahun</div>
+  <h1><br>Party!</h1>
+  <div class="sub">Kue, musik, dan banyak tawa</div>
+  <div class="tamu">
+    <div>Untuk</div>
+    <h3 id="gNama">Best friend</h3>
+    <div id="gKet">Spesial untukmu</div>
+  </div>
+  <button class="btn" id="openBtn" type="button">Buka undangan</button>
+</div>
+
+<section id="home">
+  <div>Arbyan berulang tahun ke</div>
+  <div class="angka" id="angka" role="button" tabindex="0" aria-label="Ketuk untuk konfeti">17</div>
+  <h1>Ayo rayakan bareng!</h1>
+  <p>Datang dengan baju warna cerah, bawa semangat terbaikmu, dan siapkan perut kosong. Ada banyak makanan enak. Ketuk angka 17 untuk konfeti!</p>
+  <div class="cd" aria-live="off">
+    <div><b id="d">00</b><span>Hari</span></div>
+    <div><b id="h">00</b><span>Jam</span></div>
+    <div><b id="m">00</b><span>Menit</span></div>
+    <div><b id="s">00</b><span>Detik</span></div>
+  </div>
+</section>
+
+<section id="acara">
+  <h2>Kapan & di mana</h2>
+  <div class="info">
+    <div class="box"><h3>Tanggal</h3><p id="tgl">Sabtu, 19 Desember 2026</p></div>
+    <div class="box"><h3>Waktu</h3><p>19.00 – 22.00 WIB</p></div>
+    <div class="box"><h3>Tempat</h3><p id="tempat">Jl. Kebayoran Regensi No. 84</p></div>
+  </div>
+  <div class="row">
+    <a class="btn" id="mapBtn" href="https://www.google.com/maps/search/?api=1&amp;query=Jl.%20Kebayoran%20Regensi%20No.%2084">Buka peta</a>
+    <button class="btn alt" id="calBtn" type="button">Simpan ke kalender</button>
+  </div>
+
+  <h2 style="margin-top:56px">Susunan acara</h2>
+  <ul class="tl">
+    <li><time>19.00</time><h3>Datang & foto-foto</h3><p>Ambil minuman, cari tempat duduk, dan foto di photo booth.</p></li>
+    <li><time>19.45</time><h3>Tiup lilin</h3><p>Nyanyi bareng dan potong kue.</p></li>
+    <li><time>20.15</time><h3>Makan malam & games</h3><p>Makan bareng, lalu main games dengan hadiah.</p></li>
+    <li><time>21.30</time><h3>Karaoke & dansa</h3><p>Siapkan suara terbaikmu.</p></li>
+  </ul>
+</section>
+
+<section id="galeri">
+  <h2>Galeri</h2>
+  <div class="grid">
+    <figure class="rv"><img src="assets/img/foto1.svg" alt="Ilustrasi kue ulang tahun dengan lilin" loading="lazy"></figure>
+    <figure class="rv"><img src="assets/img/foto2.svg" alt="Ilustrasi minuman di pesta" loading="lazy"></figure>
+    <figure class="rv"><img src="assets/img/foto3.svg" alt="Ilustrasi tempat pesta dengan lampu dan bunting" loading="lazy"></figure>
+    <figure class="rv"><img src="assets/img/foto4.svg" alt="Ilustrasi balon dan kado" loading="lazy"></figure>
+  </div>
+</section>
+
+<section id="kado">
+  <h2>Kirim kado</h2>
+  <div class="info">
+    <div class="box rv"><h3>Transfer</h3><p>BCA/gopay 89632188118<br>arby</p>
+      <button class="btn alt" type="button" data-copy="89632188118">Salin no. rekening</button></div>
+    <div class="box rv"><h3>Alamat kado</h3><p>Jl. Kebayoran Regensi No. 84</p>
+      <button class="btn alt" type="button" data-copy="Jl. Kebayoran Regensi No. 84">Salin alamat</button></div>
+  </div>
+</section>
+
+<section id="rsvp">
+  <h2>Kamu bisa datang?</h2>
+  <div class="box">
+    <form id="rsvpForm">
+      <label for="fNama">Nama</label>
+      <input id="fNama" required placeholder="Nama kamu" autocomplete="name">
+      <label for="fStatus">Kehadiran</label>
+      <select id="fStatus"><option>Hadir</option><option>Tidak Hadir</option></select>
+      <label for="fUcap">Ucapan & doa</label>
+      <textarea id="fUcap" rows="3" placeholder="Tulis ucapanmu untuk Arby"></textarea>
+      <button class="btn" type="submit">Kirim ucapan</button>
+      <button class="btn alt" id="waBtn" type="button">Kirim juga lewat WhatsApp</button>
+    </form>
+    <p class="note">Mohon konfirmasi sebelum 15 Desember 2026.</p>
+  </div>
+  <h2 style="margin-top:44px">Buku tamu</h2>
+  <ul class="bt" id="bukuTamu"></ul>
+</section>
+
+<footer>Dibuat dengan cinta untuk hari spesial </footer>
+
+<nav aria-label="Navigasi"><a href="#home">Beranda</a><a href="#acara">Acara</a><a href="#galeri">Galeri</a><a href="#kado">Kado</a><a href="#rsvp">RSVP</a></nav>
+<div class="lb" id="lb"><img id="lbImg" alt="Foto diperbesar"></div>
+<audio id="bgm" loop preload="none" src="assets/audio/lagu.mp3"></audio>
+<button class="music" id="musicBtn" type="button" aria-label="Putar atau jeda musik">♪</button>
+<div class="toast" id="toast" role="status"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<script src="script.js"></script>
+</body>
+</html>
